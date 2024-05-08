@@ -2,5 +2,17 @@
 	"name": "ntt-data",
 	"version": "1.0.0",
 	"main": "index.js",
-	"license": "MIT"
+	"license": "MIT",
+	"private": true,
+	"scripts": {
+		"build": "turbo build",
+		"dev": "turbo dev",
+		"lint": "turbo lint",
+		"format": "turbo lint"
+	},
+	"devDependencies": {
+		"turbo": "1.13.3"
+	},
+	"packageManager": "yarn@1.22.22",
+	"workspaces": ["apps/*", "packages/*"]
 }
