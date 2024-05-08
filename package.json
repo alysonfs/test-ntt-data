@@ -11,7 +11,8 @@
 		"format": "turbo lint"
 	},
 	"devDependencies": {
-		"turbo": "1.13.3"
+		"turbo": "1.13.3",
+		"typescript": "5.4.5"
 	},
 	"packageManager": "yarn@1.22.22",
 	"workspaces": ["apps/*", "packages/*"]
