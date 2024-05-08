@@ -1,0 +1,5 @@
+{
+  "extends": "@ntt-data/typescript-config/ui.json",
+  "include": ["."],
+  "exclude": ["node_modules"]
+}

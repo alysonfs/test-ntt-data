@@ -1,0 +1,15 @@
+{
+  "name": "@ntt-data/ui",
+  "version": "0.0.0",
+  "sideEffects": ["**/*.css", "**/*.scss"],
+  "private": true,
+  "license": "MIT",
+  "exports": {
+    "./base.scss": "./styles/_base.scss",
+    "./components": "./components/index.ts"
+  },
+  "devDependencies": {
+    "@ntt-data/typescript-config": "*",
+    "sass": "1.77.0"
+  }
+}
