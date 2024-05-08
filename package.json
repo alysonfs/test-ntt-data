@@ -7,8 +7,10 @@
 	"scripts": {
 		"build": "turbo build",
 		"dev": "turbo dev",
+		"web:preview": "yarn workspaces run preview",
+		"web:dev": "yarn workspaces run dev",
 		"lint": "turbo lint",
-		"format": "turbo lint"
+		"format": "turbo format"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.7.3",
