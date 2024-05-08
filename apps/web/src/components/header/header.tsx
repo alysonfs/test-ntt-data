@@ -1,9 +1,10 @@
 import { TextTitle } from "@ntt-data/ui/components"
+import "./_header.scss"
 
-export default function App() {
+export const Header = () => {
   return (
-    <div>
+    <header>
       <TextTitle text="Hello world" />
-    </div>
+    </header>
   )
 }
