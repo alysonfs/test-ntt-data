@@ -5,7 +5,7 @@
   "private": true,
   "license": "MIT",
   "exports": {
-    "./base.scss": "./styles/_base.scss",
+    "./theme-default.scss": "./styles/themes/_default.scss",
     "./components": "./components/index.ts"
   },
   "devDependencies": {

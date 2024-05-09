@@ -632,7 +632,7 @@
     "@lit-labs/ssr-dom-shim" "^1.1.2"
     lit-html "^2.0.1"
 
-"@ui5/webcomponents-fiori@^1.24.0":
+"@ui5/webcomponents-fiori@1.24.0":
   version "1.24.0"
   resolved "https://registry.yarnpkg.com/@ui5/webcomponents-fiori/-/webcomponents-fiori-1.24.0.tgz#6785b33520c7b308f02678bbc7fb5c3fd74d3749"
   integrity sha512-zHsOA5WOFq7LyiLEJjgSvDUnjPHkJuG0JZfKQn7PjmSD30tLQywGqkaZ6mjqm+o3W3MvmdddnucCwos3CMDWeA==
@@ -657,7 +657,7 @@
   dependencies:
     "@ui5/webcomponents-base" "1.24.0"
 
-"@ui5/webcomponents-icons@1.24.0", "@ui5/webcomponents-icons@^1.24.0":
+"@ui5/webcomponents-icons@1.24.0":
   version "1.24.0"
   resolved "https://registry.yarnpkg.com/@ui5/webcomponents-icons/-/webcomponents-icons-1.24.0.tgz#fdc15c5118a4312a918f47f6d5dd7e415a39fcbf"
   integrity sha512-52ZNZC5/+/MuD+rzgxrk7I8BJhI0EKPro/pVwTt5I8D7geEbP6MO9/KPeDvq/EhHbyPEXCKZA2YP0AnTyciheA==

@@ -1,0 +1,15 @@
+@use '../abstract/colors' as *;
+
+@import '../reset';
+
+
+$primary: $gray-0;
+$background: $white;
+
+$font-family: 'Inter', sans-serif;
+$font-size: 12px;
+
+$border-radius: 4px;
+$border-width: 1px;
+
+$shadow: 0 2px 4px rgba($black, 0.1);
