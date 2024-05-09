@@ -1,22 +1,25 @@
 {
-	"name": "ntt-data",
-	"version": "1.0.0",
-	"main": "index.js",
-	"license": "MIT",
-	"private": true,
-	"scripts": {
-		"build": "turbo build",
-		"dev": "turbo dev",
-		"web:preview": "yarn workspaces run preview",
-		"web:dev": "yarn workspaces run dev",
-		"lint": "turbo lint",
-		"format": "turbo format"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "1.7.3",
-		"turbo": "1.13.3",
-		"typescript": "5.4.5"
-	},
-	"packageManager": "yarn@1.22.22",
-	"workspaces": ["apps/*", "packages/*"]
+  "name": "ntt-data",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "web:preview": "yarn workspaces run preview",
+    "web:dev": "yarn workspace web run dev",
+    "movie-api:dev": "yarn workspace movie-api run dev",
+    "movie-api:test": "yarn workspace movie-api run test",
+    "lint": "turbo lint",
+    "format": "turbo format"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.7.3",
+    "turbo": "1.13.3",
+    "ts-node": "10.9.1",
+    "typescript": "5.4.5"
+  },
+  "packageManager": "yarn@1.22.22",
+  "workspaces": ["apps/**/*", "packages/*"]
 }
