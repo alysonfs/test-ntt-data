@@ -1,9 +1,7 @@
-import { ThemeProvider } from "@ui5/webcomponents-react"
+import { ThemeProvider, type ThemeProviderPropTypes } from '@ui5/webcomponents-react'
 
-interface IThemeProviderFactoryProps {
-  children: React.ReactElement
-}
+interface IThemeProviderFactoryProps extends ThemeProviderPropTypes {}
 
 export const ThemeProviderFactory = (props: IThemeProviderFactoryProps) => {
-  return <ThemeProvider>{props.children}</ThemeProvider>
+  return <ThemeProvider {...props}>{props.children}</ThemeProvider>
 }
