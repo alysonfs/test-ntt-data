@@ -1,1 +1,6 @@
-export * from "./text-title"
+export * from './text-title'
+export * from './theme'
+export * from './button'
+export * from './title'
+export * from './text'
+export * from './icon'
