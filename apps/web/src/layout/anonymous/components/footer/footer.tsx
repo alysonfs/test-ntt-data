@@ -1,9 +1,11 @@
-import "./_footer.scss"
+import { Text } from '@ntt-data/ui/components'
+import './_footer.scss'
 
 export const Footer = () => {
+  const year = new Date().getFullYear()
   return (
-    <footer>
-      <p>© 2021 Company Name</p>
+    <footer className="bg-white">
+      <Text>© {year} NTT - Data</Text>
     </footer>
   )
 }

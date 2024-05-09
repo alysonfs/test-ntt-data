@@ -1,4 +1,5 @@
 import { Header, Footer, Content } from './components'
+import './_anonymous.scss'
 
 interface AnonymousLayoutProps {
   children: React.ReactNode

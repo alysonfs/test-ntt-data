@@ -1,9 +1,10 @@
-import "./_header.scss"
+import { Text } from '@ntt-data/ui/components'
+import './_header.scss'
 
 export const Header = () => {
   return (
     <header>
-      <p>Farejador</p>
+      <Text className="bold">Sniffer</Text>
     </header>
   )
 }
