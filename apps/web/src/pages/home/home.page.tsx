@@ -1,7 +1,7 @@
-import "./_app.scss"
+import "./_home.scss"
 import { Content, Footer, Header } from "./components"
 
-export default function App() {
+export default function Home() {
   return (
     <div id="app-container">
       <Header />
