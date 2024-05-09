@@ -11,5 +11,11 @@
   "devDependencies": {
     "@ntt-data/typescript-config": "*",
     "sass": "1.77.0"
+  },
+  "dependencies": {
+    "@ui5/webcomponents": "1.24.0",
+    "@ui5/webcomponents-fiori": "1.24.0",
+    "@ui5/webcomponents-icons": "1.24.0",
+    "@ui5/webcomponents-react": "1.28.1"
   }
 }
