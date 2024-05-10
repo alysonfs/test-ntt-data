@@ -1,7 +1,8 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "target": "ES2020"
   },
-  "include": ["service", "adapter"],
+  "exclude": ["node_modules"],
   "references": [{ "path": "./base.json" }]
 }
