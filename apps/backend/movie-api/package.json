@@ -1,5 +1,5 @@
 {
-  "name": "movie-api",
+  "name": "@api/movie",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -20,6 +20,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@ntt-data/typescript-config": "*",
     "@nestjs/common": "10.0.0",
     "@nestjs/core": "10.0.0",
     "@nestjs/platform-express": "10.0.0",
