@@ -1,0 +1,11 @@
+{
+  "extends": "@ntt-data/typescript-config/shared.json",
+  "compilerOptions": {
+    "sourceMap": true,
+    "target": "ES2021",
+    "outDir": "./dist",
+    "declarationDir": "./dist",
+    "baseUrl": "./src",
+    "module": "commonjs"
+  }
+}
