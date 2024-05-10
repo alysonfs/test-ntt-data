@@ -8,9 +8,6 @@
       "quoteStyle": "single",
       "trailingComma": "none",
       "semicolons": "asNeeded"
-    },
-    "parser": {
-      "unsafeParameterDecoratorsEnabled": true
     }
   },
   "formatter": {
@@ -26,5 +23,26 @@
         "noExplicitAny": "warn"
       }
     }
-  }
+  },
+  "overrides": [
+    {
+      "include": ["apps/backend/**"],
+      "linter": {
+        "enabled": false,
+        "rules": {
+          "suspicious": {
+            "noExplicitAny": "warn"
+          },
+          "style": {
+            "useImportType": "off"
+          }
+        }
+      },
+      "javascript": {
+        "parser": {
+          "unsafeParameterDecoratorsEnabled": true
+        }
+      }
+    }
+  ]
 }
