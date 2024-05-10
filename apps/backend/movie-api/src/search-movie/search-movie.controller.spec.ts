@@ -17,8 +17,9 @@ describe('SearchMovieController', () => {
   });
 
   it('GET /movie/search-movie/:name - should returns Return: any_name', () => {
-    const payload_name = 'any_name';
+    const payload_name = 'anyName';
     const result = controller.searchMovie({ name: payload_name });
     expect(result).toBe(`Return: ${payload_name}`);
   });
+
 });
