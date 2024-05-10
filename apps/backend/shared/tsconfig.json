@@ -1,22 +1,11 @@
 {
-  "extends": "@ntt-data/typescript-config/api.json",
+  "extends": "@ntt-data/typescript-config/shared.json",
   "compilerOptions": {
-    "module": "commonjs",
-    "declaration": true,
-    "removeComments": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "target": "ES2021",
     "sourceMap": true,
+    "target": "ES2021",
     "outDir": "./dist",
-    "baseUrl": "./",
-    "incremental": true,
-    "skipLibCheck": true,
-    "strictNullChecks": false,
-    "noImplicitAny": false,
-    "strictBindCallApply": false,
-    "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "declarationDir": "./dist",
+    "baseUrl": "./src",
+    "module": "commonjs"
   }
 }

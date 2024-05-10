@@ -1,14 +1,18 @@
 {
   "name": "@api/shared",
   "version": "1.0.0",
-  "main": "src/index.ts",
   "license": "MIT",
+  "private": true,
+  "main": "dist/index.js",
   "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc -p tsconfig.build.json",
     "test": "jest",
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@nestjs/common": "^10.3.8",
+    "@nestjs/common": "10.0.0",
+    "@ntt-data/shared": "*",
     "@ntt-data/typescript-config": "*"
   },
   "jest": {
@@ -27,5 +31,8 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "rimraf": "5.0.6"
   }
 }
