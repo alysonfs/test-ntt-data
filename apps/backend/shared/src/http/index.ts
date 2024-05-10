@@ -1,1 +1,1 @@
-export * from './http-response.interface'
+export * from './http-response'
