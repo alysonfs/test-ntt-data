@@ -68,3 +68,36 @@
     }
   }
 }
+
+
+@media screen and (max-width: 740px) {
+  .top-area {
+    width: 95%;
+    padding: 0;
+
+    .title {
+      width: 100%;
+    }
+  }
+
+  .movie-area {
+    flex-direction: column;
+    gap: 3rem;
+    width: 95%;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .top-area {
+    .search-area {
+      width: 100%;
+      flex-direction: column;
+      gap: .75rem;
+
+      input {
+        width: 100%;
+      }
+    }
+  }
+}
