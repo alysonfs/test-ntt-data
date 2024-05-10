@@ -27,3 +27,20 @@ Junto com este material você deve ter recebido um wireframe para usar como nort
 
 ## Por fim
 versione em um repositório público e nos encaminhe o link.
+
+# Farejador - Movie
+
+Instalação das dependencias:
+```bash
+$ yarn install 
+```
+
+Construir todas as aplicações:
+```bash
+$ yarn build
+```
+
+Executar todas as aplicações como DEV
+```bash
+$ yarn dev
+```

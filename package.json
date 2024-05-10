@@ -1,7 +1,6 @@
 {
   "name": "ntt-data",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -9,8 +8,10 @@
     "dev": "turbo dev",
     "web:preview": "yarn workspaces run preview",
     "web:dev": "yarn workspace web run dev",
-    "movie-api:dev": "yarn workspace movie-api run dev",
-    "movie-api:test": "yarn workspace movie-api run test",
+    "movie-api:dev": "yarn workspace @api/movie run dev",
+    "movie-api:test": "yarn workspace @api/movie run test",
+    "shared-api:dev": "yarn workspace @api/shared run dev",
+    "shared-api:tes": "yarn workspace @api/shared run test",
     "lint": "turbo lint",
     "format": "turbo format"
   },
@@ -21,5 +22,5 @@
     "typescript": "5.4.5"
   },
   "packageManager": "yarn@1.22.22",
-  "workspaces": ["apps/**/*", "packages/*"]
+  "workspaces": ["core/*", "packages/*", "apps/**/*"]
 }
