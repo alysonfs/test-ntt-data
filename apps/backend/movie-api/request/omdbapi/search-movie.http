@@ -1,0 +1,9 @@
+@base_url = http://www.omdbapi.com
+@base-img_url = http://img.omdbapi.com
+@apikey = 44dc3d1d
+
+## Send all data requests to:
+GET {{base_url}}/?apikey={{apikey}}&t=vida&type=movie&plot=full
+
+### Poster API requests:
+GET {{base-img_url}}/?apikey={{apikey}}&i=tt0107566
