@@ -1,4 +1,4 @@
 @base_url = http://localhost:8080
 
 ### GET /movie/search-movie/:name
-GET {{base_url}}/movie/search-movie/anyName HTTP/1.1
+GET {{base_url}}/movie/search-movie/vida HTTP/1.1

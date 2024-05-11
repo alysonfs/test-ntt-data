@@ -1,5 +1,5 @@
 import { Controller, Get, Param } from '@nestjs/common'
-import { UCSearchMovie } from '@ntt-data/core'
+import { Movie, UCSearchMovie } from '@ntt-data/core'
 import { DTO } from './dto'
 import { SearchMovieService } from './search-movie.service'
 
@@ -8,7 +8,7 @@ export class SearchMovieController implements UCSearchMovie {
   constructor(private readonly searchMovieService: SearchMovieService) {}
 
   @Get('/search-movie/:title')
-  async searchMovie(@Param() params: DTO.Input.SearchMovie): Promise<DTO.Output.SearchMovie> {
+  async searchMovie(@Param() params: DTO.Input.SearchMovie): Promise<Movie> {
     return this.searchMovieService.searchMovie(params.title)
   }
 }

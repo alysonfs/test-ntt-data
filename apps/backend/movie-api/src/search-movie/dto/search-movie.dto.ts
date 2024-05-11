@@ -1,41 +1,12 @@
-import { EMovieType, Movie } from "@ntt-data/core"
-import { IsAlphanumeric, IsEnum, IsNotEmpty, IsNumber } from "class-validator"
+import { IsAlphanumeric, IsNotEmpty, Length } from "class-validator"
 
 export namespace DTO {
   export namespace Input {
     export class SearchMovie {
-      @IsNotEmpty()
-      @IsAlphanumeric()
+      @IsNotEmpty({ message: 'The title is required' })
+      @IsAlphanumeric(undefined, { message: 'The title must contain only alphanumeric characters' })
+      @Length(3, 150, { message: 'The title must be between 3 and 150 characters long' })
       title: string
-    }
-  }
-
-  export namespace Output {
-    export class SearchMovie implements Movie {
-      @IsNotEmpty()
-      @IsAlphanumeric()
-      title: string
-      actors: string[]
-
-      @IsNotEmpty()
-      @IsAlphanumeric()
-      plot: string
-
-      @IsNotEmpty()
-      @IsAlphanumeric()
-      poster: string
-
-      @IsNotEmpty()
-      @IsNumber()
-      rating: number
-
-      @IsNotEmpty()
-      @IsNumber()
-      movieId: string
-
-      @IsNotEmpty()
-      @IsEnum(EMovieType)
-      type: EMovieType
     }
   }
 }

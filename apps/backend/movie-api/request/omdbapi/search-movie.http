@@ -7,3 +7,7 @@ GET {{base_url}}/?apikey={{apikey}}&t=vida&type=movie&plot=full
 
 ### Poster API requests:
 GET {{base-img_url}}/?apikey={{apikey}}&i=tt0107566
+
+### Example request:
+http://www.omdbapi.com/?apikey=44dc3d1d&t=anyName&type=movie&plot=full
+# { Response: 'False', Error: 'Movie not found!' }
