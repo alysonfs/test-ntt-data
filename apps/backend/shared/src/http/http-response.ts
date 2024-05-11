@@ -11,10 +11,10 @@ export class HttpResponse<T extends Object | Error> implements TResponse<T> {
   message?: string
   result?: T
 
-  constructor(private response: T, status = 200, fromCache = false, message?: string) {
+  constructor(private response: T, status = 200, fromCache = false, message?: string | string []) {
     this.status = this.statusToBoolean(status)
     this.fromCache = fromCache
-    this.message = message
+    this.message = Array.isArray(message) ? message.join(', ') : message 
     this.result = this.response
   }
 

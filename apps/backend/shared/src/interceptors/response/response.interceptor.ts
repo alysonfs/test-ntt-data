@@ -37,6 +37,11 @@ export class ResponseInterceptor implements NestInterceptor {
     Logger.error(`${request.method} ${request.url}`, exception.stack, 'ResponseInterceptor')
 
     const status = exception instanceof HttpException ? exception.getStatus() : HttpStatus.INTERNAL_SERVER_ERROR
-    response.status(200).json(new HttpResponse(undefined, status, undefined, exception.message).build())
+    
+    if (exception['response']){
+      response.status(200).json(new HttpResponse(undefined, status, undefined, exception['response'].message).build())
+    }else{
+      response.status(200).json(new HttpResponse(undefined, status, undefined, exception.message).build())
+    }
   }
 }
