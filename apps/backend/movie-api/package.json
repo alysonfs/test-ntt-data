@@ -21,14 +21,14 @@
     "load:test": "artillery run --output ./request/artillery/movie-api.json ./request/artillery/movie-api.yaml"
   },
   "dependencies": {
-    "@api/shared": "*",
+    "@api/shared": "1.0.0",
     "@nestjs/axios": "^3.0.2",
     "@nestjs/common": "10.0.0",
     "@nestjs/config": "^3.2.2",
     "@nestjs/core": "10.0.0",
     "@nestjs/platform-express": "10.0.0",
-    "@ntt-data/core": "*",
-    "@ntt-data/typescript-config": "*",
+    "@ntt-data/core": "1.0.0",
+    "@ntt-data/typescript-config": "1.0.0",
     "axios": "^1.6.8",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",

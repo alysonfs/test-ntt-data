@@ -9,7 +9,7 @@
     "./components": "./components/index.ts"
   },
   "devDependencies": {
-    "@ntt-data/typescript-config": "*",
+    "@ntt-data/typescript-config": "1.0.0",
     "sass": "1.77.0"
   },
   "dependencies": {

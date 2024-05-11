@@ -12,8 +12,8 @@
   },
   "dependencies": {
     "@nestjs/common": "10.0.0",
-    "@ntt-data/shared": "*",
-    "@ntt-data/typescript-config": "*"
+    "@ntt-data/shared": "1.0.0",
+    "@ntt-data/typescript-config": "1.0.0"
   },
   "jest": {
     "moduleFileExtensions": [
