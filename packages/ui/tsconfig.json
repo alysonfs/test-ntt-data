@@ -2,7 +2,13 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Default",
   "compilerOptions": {
+    "sourceMap": true,
+    "outDir": "./dist",
+    "declarationDir": "./dist",
+    "baseUrl": "./src",
     "composite": false,
+    "incremental": true,
+    "skipLibCheck": true,
     "declaration": true,
     "declarationMap": true,
     "esModuleInterop": true,
@@ -11,11 +17,7 @@
     "preserveWatchOutput": true,
     "strictNullChecks": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "jsx": "react-jsx",
-    "sourceMap": true,
-    "outDir": "./dist",
-    "declarationDir": "./dist",
-    "baseUrl": "./src"
+    "jsx": "react-jsx"
   },
   "include": ["components"],
   "exclude": ["node_modules"]

@@ -4,7 +4,9 @@
   "sideEffects": ["**/*.css", "**/*.scss"],
   "private": true,
   "license": "MIT",
+  "type": "module",
   "scripts": {
+    "prebuild": "rimraf dist",
     "build": "tsc"
   },
   "exports": {
