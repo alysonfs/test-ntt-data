@@ -1,10 +1,13 @@
-import { Text } from '@ntt-data/ui/components'
+import SnifferLogoSvg from '../../../../assets/image/sniffer-logo.svg?react'
+
 import './_header.scss'
 
 export const Header = () => {
   return (
     <header>
-      <Text className="bold">Sniffer</Text>
+      <div className='img'>
+        <SnifferLogoSvg />
+      </div>
     </header>
   )
 }
