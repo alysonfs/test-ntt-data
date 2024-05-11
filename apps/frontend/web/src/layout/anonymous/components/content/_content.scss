@@ -1,11 +1,11 @@
 main {
   display: flex;
+  margin-top: 50px;
+  margin-bottom: 50px;
   flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
-  justify-content: center;
-  // min-height: 560px;
+  justify-content: flex-start;
   max-width: 970px;
-  height: 660px;
   overflow-y: auto;
 }

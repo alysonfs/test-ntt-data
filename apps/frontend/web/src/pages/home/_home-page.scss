@@ -30,52 +30,75 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     gap: 1rem;
     width: 70%;
+
+    .input-base {
+      width: 100%;
+      flex:1
+    }
+
+    .button-base {
+      width: 100%;
+      flex:1
+    }
   }
 }
 
 .movie-area {
+  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
   .about-area {
     display: flex;
+    width: 100%;
+    flex: 1;
     flex-direction: column;
     gap: 1rem;
-  }
 
-  .actor {
-    display: flex;
-    flex-direction: row;
-    gap: 0.9rem;
-  }
-
-  .review {
-    display: flex;
-    flex-direction: row;
-    gap: 0.9rem;
-
-    .stars {
+    .actor {
       display: flex;
       flex-direction: row;
-      justify-content: center;
-      align-items: center;
       gap: 0.9rem;
     }
+  
+    .review {
+      display: flex;
+      flex-direction: row;
+      gap: 0.9rem;
+  
+      .stars {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 0.9rem;
+      }
+    }
+  }
+
+  .poster-area{
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
   }
 }
 
 
 @media screen and (max-width: 740px) {
   .top-area {
-    width: 95%;
+    width: 100%;
     padding: 0;
 
     .title {
+      width: 100%;
+    }
+
+    .search-area {
       width: 100%;
     }
   }
@@ -83,8 +106,14 @@
   .movie-area {
     flex-direction: column;
     gap: 3rem;
-    width: 95%;
+    width: 100%;
     padding: 0;
+
+    .poster-area{
+      display: flex;
+      flex: 1;
+      justify-content: center;
+    }
   }
 }
 
