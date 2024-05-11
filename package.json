@@ -10,6 +10,7 @@
     "web:dev": "yarn workspace web run dev",
     "movie-api:dev": "yarn workspace @api/movie run dev",
     "movie-api:test": "yarn workspace @api/movie run test",
+    "movie-api:load:test": "yarn workspace @api/movie run load:test",
     "shared-api:dev": "yarn workspace @api/shared run dev",
     "shared-api:tes": "yarn workspace @api/shared run test",
     "lint": "turbo lint",

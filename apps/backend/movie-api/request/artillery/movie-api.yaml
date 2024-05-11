@@ -1,0 +1,35 @@
+# https://www.artillery.io/docs
+
+config:
+  # This is a test server run by team Artillery
+  # It's designed to be highly scalable
+  target: "http://localhost:8080"
+  phases:
+    - duration: 60
+      arrivalRate: 1
+      rampTo: 5
+      name: Warm up phase
+    - duration: 60
+      arrivalRate: 5
+      rampTo: 10
+      name: Ramp up load
+    - duration: 30
+      arrivalRate: 10
+      rampTo: 30
+      name: Spike phase
+  ensure:
+    # https://www.artillery.io/docs/reference/extensions/ensure
+    thresholds:
+      # p99 of response time must be <250:
+      - 'http.response_time.p99': 250
+      # p95 of response time must be <100:
+      - 'http.response_time.p95': 100
+    conditions:
+      # Check that we generated 1000+ requests per second and that p95 is < 250ms
+      - expression: 'http.response_time.p95 < 250 and http.request_rate > 1000'
+scenarios:
+  - flow:
+      - get:
+          url: "/movie/search-movie/vida"
+    count: 100
+
