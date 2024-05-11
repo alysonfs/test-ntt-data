@@ -11,9 +11,7 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@nestjs/common": "10.0.0",
-    "@ntt-data/shared": "1.0.0",
-    "@ntt-data/typescript-config": "1.0.0"
+    "@nestjs/common": "10.0.0"
   },
   "jest": {
     "moduleFileExtensions": [

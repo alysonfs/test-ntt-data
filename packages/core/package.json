@@ -10,9 +10,6 @@
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watch"
   },
-  "dependencies": {
-    "@ntt-data/typescript-config": "1.0.0"
-  },
   "jest": {
     "moduleFileExtensions": [
       "js",

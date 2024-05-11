@@ -4,12 +4,14 @@
   "sideEffects": ["**/*.css", "**/*.scss"],
   "private": true,
   "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
   "exports": {
     "./theme-default.scss": "./styles/themes/_default.scss",
-    "./components": "./components/index.ts"
+    "./components": "./dist/index.js"
   },
   "devDependencies": {
-    "@ntt-data/typescript-config": "1.0.0",
     "sass": "1.77.0"
   },
   "dependencies": {
