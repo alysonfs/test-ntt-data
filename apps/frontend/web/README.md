@@ -1,3 +1,3 @@
 # Projeto web - Filtro de filmes
 
-## React + TypeScript + Vite
+## React + TypeScript + Vite + Redux
