@@ -9,6 +9,7 @@
     "build": "nest build",
     "lint": "biome lint src",
     "format": "biome format src",
+    "prod": "node ./dist/main.js",
     "start": "nest start",
     "dev": "nest start --watch",
     "dev:debug": "nest start --debug --watch",

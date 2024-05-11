@@ -9,6 +9,7 @@
     "test": "turbo test",
     "web:preview": "yarn workspace web run preview",
     "web:dev": "yarn workspace web run dev",
+    "movie-api:prod": "yarn workspace @api/movie run prod",
     "movie-api:dev": "yarn workspace @api/movie run dev",
     "movie-api:test": "yarn workspace @api/movie run test",
     "movie-api:load:test": "yarn workspace @api/movie run load:test",
