@@ -44,3 +44,21 @@ Executar todas as aplicações como DEV
 ```bash
 $ yarn dev
 ```
+
+# Teste de carga 
+Instale globalmente a biblioteca `artillery``
+
+```bash
+$ npm install -g artillery  
+```
+
+## Movie API
+resultado inicial: [artillery cloud](https://app.artillery.io/share/sh_4c930710fa72e74959dda48b5f78420eac1c161eade39f31ef2281ca49583fef)  
+
+### Rorando localmente o teste de carga
+
+Execute
+```bash
+$ yarn movie-api:load:test
+```
+

@@ -9,3 +9,8 @@ dist-ssr
 .cache
 server/dist
 public/dist
+
+# Tests
+/coverage
+/.nyc_output
+/request/artillery/**/*.json
