@@ -6,6 +6,7 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
+    "test": "turbo test",
     "web:preview": "yarn workspaces run preview",
     "web:dev": "yarn workspace web run dev",
     "movie-api:dev": "yarn workspace @api/movie run dev",

@@ -1,6 +1,6 @@
 import { HttpService } from '@nestjs/axios'
 import { Injectable, Logger } from '@nestjs/common'
-import { EMovieType, Movie, MovieEntity } from '@ntt-data/core'
+import { EMovieType, Movie } from '@ntt-data/core'
 import { AxiosError } from 'axios'
 import { catchError, firstValueFrom } from 'rxjs'
 
@@ -46,7 +46,6 @@ export class SearchMovieService {
       movieId: data.imdbID,
       type: data.Type as EMovieType
     })
-    
     return movie
   }
 }
