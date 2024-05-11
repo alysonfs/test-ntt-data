@@ -12,7 +12,7 @@ export default function HomePage() {
   const dispatch = useDispatch()
 
   const [title, setTitle] = useState('')
-  const [load, setLoad] = useState(true)
+  const [load, setLoad] = useState(false)
   const [message, setMessage] = useState('')
 
   useEffect(() => {
@@ -24,16 +24,18 @@ export default function HomePage() {
   }, [message])
 
   const onSearchHandler = async () => {
-    if (title.length >= 3) {
+    setMessage('')
+    if (title.length > 3) {
       setLoad(true)
       const result = await getMovie(title)
-      console.log('result', result)
       if (result) {
         dispatch(setMovie(result))
       } else {
         setMessage('We didn`t sniff out any films with that name.Try again!')
       }
       setLoad(false)
+    } else {
+      setMessage('Oops! It seems like your search is too short for us to sniff out. Please enter more than three letters and try again!')
     }
   }
 
@@ -56,6 +58,7 @@ export default function HomePage() {
 
   const showMovie = movie.movieId !== undefined && movie.movieId !== ''
   const showMessage = message && message !== ''
+  const showLoading = load
 
   return (
     <div className="container">
@@ -71,7 +74,7 @@ export default function HomePage() {
           <ButtonSearch onClick={onSearchHandler} />
           <ButtonReset onClick={onResetHandler} />
         </div>
-        {load && <Loading />}
+        {showLoading && <Loading active={load} />}
         {showMessage && <Text >{message}</Text>}
       </div>
       {
@@ -103,7 +106,7 @@ export default function HomePage() {
             (movie.poster === undefined || movie.poster === '') ?
               <div className="poster-area">
                 <div className="image">
-                  <img src="https://placehold.co/200x350" alt="poster" />
+                  <img src="https://placehold.co/300x400" alt="poster" />
                 </div>
               </div>
               :
