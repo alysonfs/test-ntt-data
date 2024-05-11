@@ -33,6 +33,7 @@ Junto com este material você deve ter recebido um wireframe para usar como nort
 versione em um repositório público e nos encaminhe o link.
 
 # Farejador - Movie
+![Screenshot](./screenshot.png)
 
 Instalação das dependencias:
 ```bash
