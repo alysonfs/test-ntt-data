@@ -1,6 +1,8 @@
 import { ButtonBase, type IButtonBaseProps } from '../base'
 
-interface IButtonFavoriteProps extends Omit<IButtonBaseProps, 'icon' | 'iconEnd' | 'children'> { }
+interface IButtonFavoriteProps extends Omit<IButtonBaseProps, 'icon' | 'iconEnd' | 'children'> {
+  onClick: () => void
+}
 
 export const ButtonFavorite = (props: IButtonFavoriteProps) => {
   return (
