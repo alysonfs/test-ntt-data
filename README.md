@@ -1,9 +1,9 @@
 # Full Stack Test Developer
 
-[ ] Criar um SPA que busque informações sobre um título de filme pesquisado.  
-[ ] A aplicação front-end deverá se comunicar com a aplicação back-end via api,  
-[ ] O front deverá consumir o objeto recebido e exibir na tela de acordo com o wireframe sugerido.  
-[ ] Aplicação back-end consumirá o serviço OMDBAPI (mais detalhes a seguir), deverá fazer a tratativa dos dados e retornar ao front um DTO. 
+[ ] Criar um SPA que busque informações sobre um título de filme pesquisado.
+[ ] A aplicação front-end deverá se comunicar com a aplicação back-end via api,
+[ ] O front deverá consumir o objeto recebido e exibir na tela de acordo com o wireframe sugerido.
+[x] Aplicação back-end consumirá o serviço OMDBAPI (mais detalhes a seguir), deverá fazer a tratativa dos dados e retornar ao front um DTO.
 
 Para isso você deverá criar uma conta para gerar sua ApiKey no seguinte serviço:
 http://www.omdbapi.com/
@@ -32,7 +32,7 @@ versione em um repositório público e nos encaminhe o link.
 
 Instalação das dependencias:
 ```bash
-$ yarn install 
+$ yarn install
 ```
 
 Construir todas as aplicações:
@@ -45,15 +45,15 @@ Executar todas as aplicações como DEV
 $ yarn dev
 ```
 
-# Teste de carga 
+# Teste de carga
 Instale globalmente a biblioteca `artillery``
 
 ```bash
-$ npm install -g artillery  
+$ npm install -g artillery
 ```
 
 ## Movie API
-resultado inicial: [artillery cloud](https://app.artillery.io/share/sh_4c930710fa72e74959dda48b5f78420eac1c161eade39f31ef2281ca49583fef)  
+resultado inicial: [artillery cloud](https://app.artillery.io/share/sh_4c930710fa72e74959dda48b5f78420eac1c161eade39f31ef2281ca49583fef)
 
 ### Rorando localmente o teste de carga
 
@@ -61,4 +61,3 @@ Execute
 ```bash
 $ yarn movie-api:load:test
 ```
-
