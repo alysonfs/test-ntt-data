@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --open --host",
     "build": "tsc && vite build",
     "lint": "biome lint src",
     "format": "biome format src",
@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "@ntt-data/ui": "1.0.0",
+    "@ntt-data/core": "1.0.0",
+    "@reduxjs/toolkit": "^2.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-router-dom": "6.23.0"

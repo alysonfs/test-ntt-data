@@ -9,10 +9,15 @@ export namespace MovieEntity {
     rating: number
     movieId: string
     type: EMovieType
+
+    /** Movie rating represented from 1 to 5 stars */
+    ratingStars?: number
   }
 }
 
-export class Movie {
+export interface IMovie extends MovieEntity.TMovie { }
+
+export class Movie implements IMovie {
   title: string
   actors: string[]
   plot: string
@@ -20,8 +25,6 @@ export class Movie {
   rating: number
   movieId: string
   type: EMovieType
-
-  /** Movie rating represented from 1 to 5 stars */
   ratingStars?: number
 
   constructor(movie: MovieEntity.TMovie) {
