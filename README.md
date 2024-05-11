@@ -1,9 +1,13 @@
 # Full Stack Test Developer
 
-[ ] Criar um SPA que busque informações sobre um título de filme pesquisado.
-[ ] A aplicação front-end deverá se comunicar com a aplicação back-end via api,
-[ ] O front deverá consumir o objeto recebido e exibir na tela de acordo com o wireframe sugerido.
+[x] Criar um SPA que busque informações sobre um título de filme pesquisado.
+
+[x] A aplicação front-end deverá se comunicar com a aplicação back-end via api,
+
+[x] O front deverá consumir o objeto recebido e exibir na tela de acordo com o wireframe sugerido.
+
 [x] Aplicação back-end consumirá o serviço OMDBAPI (mais detalhes a seguir), deverá fazer a tratativa dos dados e retornar ao front um DTO.
+
 
 Para isso você deverá criar uma conta para gerar sua ApiKey no seguinte serviço:
 http://www.omdbapi.com/
