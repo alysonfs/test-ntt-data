@@ -1,21 +1,19 @@
 import type { EMovieType } from '../../enum'
 
-export namespace MovieEntity {
-  export type TMovie = {
-    title: string
-    actors: string[]
-    plot: string
-    poster: string
-    rating: number
-    movieId: string
-    type: EMovieType
+export type TMovie = {
+  title: string
+  actors: string[]
+  plot: string
+  poster: string
+  rating: number
+  movieId: string
+  type: EMovieType
 
-    /** Movie rating represented from 1 to 5 stars */
-    ratingStars?: number
-  }
+  /** Movie rating represented from 1 to 5 stars */
+  ratingStars?: number
 }
 
-export interface IMovie extends MovieEntity.TMovie { }
+export interface IMovie extends TMovie { }
 
 export class Movie implements IMovie {
   title: string
@@ -27,7 +25,7 @@ export class Movie implements IMovie {
   type: EMovieType
   ratingStars?: number
 
-  constructor(movie: MovieEntity.TMovie) {
+  constructor(movie: TMovie) {
     this.title = movie.title
     this.actors = movie.actors
     this.plot = movie.plot
