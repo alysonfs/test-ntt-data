@@ -1,5 +1,3 @@
-import type { EMovieType } from '../../enum'
-
 export type TMovie = {
   title: string
   actors: string[]
@@ -7,7 +5,7 @@ export type TMovie = {
   poster: string
   rating: number
   movieId: string
-  type: EMovieType
+  type: 'movie' | 'series' | 'episode'
 
   /** Movie rating represented from 1 to 5 stars */
   ratingStars?: number
@@ -22,7 +20,7 @@ export class Movie implements IMovie {
   poster: string
   rating: number
   movieId: string
-  type: EMovieType
+  type: 'movie' | 'series' | 'episode'
   ratingStars?: number
 
   constructor(movie: TMovie) {

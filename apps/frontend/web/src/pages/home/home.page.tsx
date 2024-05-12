@@ -1,9 +1,10 @@
-import { Icon, Text, Title } from '@ntt-data/ui/components'
+import { Text, Title } from '@ntt-data/ui/components'
 import { ButtonFavorite, ButtonReset, ButtonSearch, InputSearchMovie } from '../../components'
 import { useSelector } from 'react-redux'
 import './_home-page.scss'
 import { getMovie } from './request'
 import { selectMovie } from './reducers/movie.reduce'
+import { Stars } from './components'
 
 export default function HomePage() {
   const movie = useSelector(selectMovie)
@@ -35,27 +36,22 @@ export default function HomePage() {
       </div>
       <div className="movie-area">
         <div className="about-area">
-          <Title>{movie}</Title>
+          <Title>{movie.title}</Title>
           <div className="description">
             <Text>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, hic incidunt! Doloremque aperiam, pariatur
-              asperiores dolore harum temporibus quaerat! Minus similique totam molestiae animi, quae sit! Tempora vel
-              reiciendis molestias! Odio maxime pariatur tempora eveniet eius recusandae fuga! Ea sunt nostrum sed
-              alias, fuga voluptatibus velit vero aspernatur similique. Quas sed beatae dolorum laboriosam nesciunt.
+              {movie.plot}
             </Text>
           </div>
           <div className="actor">
             <Text className="bold">Actor:</Text>
-            <Text>John Doe</Text>
+            {movie.actors.map((actor, index) => (
+              <Text key={index.toString()}>{actor}</Text>
+            ))}
           </div>
           <div className="review">
             <Text className="bold">Review</Text>
             <div className="stars">
-              <Icon name="favorite" />
-              <Icon name="favorite" />
-              <Icon name="favorite" />
-              <Icon name="favorite" />
-              <Icon name="favorite" />
+              <Stars rate={movie.ratingStars || 0} />
             </div>
           </div>
           <div className="button">

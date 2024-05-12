@@ -1,6 +1,6 @@
 import { HttpService } from '@nestjs/axios'
 import { Injectable, Logger } from '@nestjs/common'
-import { EMovieType, Movie } from '@ntt-data/core'
+import { Movie } from '@ntt-data/core'
 import { AxiosError } from 'axios'
 import { catchError, firstValueFrom } from 'rxjs'
 
@@ -10,7 +10,7 @@ export class SearchMovieService {
   private readonly OMDB_API_URL = process.env.OMDB_API_URL || 'http://www.omdbapi.com'
   private readonly OMDB_API_KEY = process.env.OMDB_API_KEY || 'any_key'
 
-  constructor(private readonly httpService: HttpService) {}
+  constructor(private readonly httpService: HttpService) { }
 
   async searchMovie(title: string): Promise<Movie> {
     const movies = await this.getMovies(title)
@@ -44,7 +44,7 @@ export class SearchMovieService {
       poster: data.Poster,
       rating: parseFloat(data.imdbRating),
       movieId: data.imdbID,
-      type: data.Type as EMovieType
+      type: data.Type as 'movie' | 'series' | 'episode'
     })
     return movie
   }

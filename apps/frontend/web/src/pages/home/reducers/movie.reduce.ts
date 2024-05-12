@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { TMovie } from "@ntt-data/core";
 
 export const movieSlice = createSlice({
   name: "movie",
@@ -9,14 +10,13 @@ export const movieSlice = createSlice({
     poster: '',
     rating: 0,
     movieId: '',
-    type: '',
+    type: 'movie',
     ratingStars: 0
-  },
+  } as TMovie,
   reducers: {
 
   }
 })
 
-export const selectMovie = (state: any) => state.movie
-// export const { selectMovie } = movieSlice.actions
+export const selectMovie = (state: any) => state.movie as TMovie
 export default movieSlice.reducer

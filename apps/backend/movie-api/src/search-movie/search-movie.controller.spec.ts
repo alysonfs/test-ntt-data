@@ -3,7 +3,7 @@ import { ConfigModule } from '@nestjs/config'
 import { Test, TestingModule } from '@nestjs/testing'
 import { SearchMovieController } from './search-movie.controller'
 import { SearchMovieService } from './search-movie.service'
-import { EMovieType, Movie } from '@ntt-data/core'
+import { Movie } from '@ntt-data/core'
 
 jest.mock('./search-movie.service')
 
@@ -14,7 +14,7 @@ describe('SearchMovieController', () => {
     const movieMock = new Movie({
       title: 'any_name',
       plot: 'any_plot',
-      type: EMovieType.MOVIE,
+      type: 'movie',
       actors: ['any_actors'],
       movieId: 'any_movieId',
       poster: 'any_poster',

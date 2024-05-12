@@ -2,7 +2,7 @@ import { HttpModule } from '@nestjs/axios'
 import { ConfigModule } from '@nestjs/config'
 import { Test, TestingModule } from '@nestjs/testing'
 import { SearchMovieService } from './search-movie.service'
-import { EMovieType, Movie } from '@ntt-data/core'
+import { Movie } from '@ntt-data/core'
 
 describe('SearchMovieService', () => {
   let service: SearchMovieService
@@ -26,7 +26,7 @@ describe('SearchMovieService', () => {
     seachMovieSpy.mockResolvedValue(new Movie({
       title: 'any_name',
       plot: 'any_plot',
-      type: EMovieType.MOVIE,
+      type: 'movie',
       actors: ['any_actors'],
       movieId: 'any_movieId',
       poster: 'any_poster',
