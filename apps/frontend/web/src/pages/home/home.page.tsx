@@ -1,12 +1,19 @@
 import { Icon, Text, Title } from '@ntt-data/ui/components'
 import { ButtonFavorite, ButtonReset, ButtonSearch, InputSearchMovie } from '../../components'
+import { useSelector } from 'react-redux'
 import './_home-page.scss'
 import { getMovie } from './request'
+import { selectMovie } from './reducers/movie.reduce'
 
 export default function HomePage() {
+  const movie = useSelector(selectMovie)
+  // const newState = selectMovie()
+  // console.log(movieSlice, selectMovie, movie)
+  console.log(movie)
+
   const onSearchHandler = async () => {
     const result = await getMovie('batman')
-    console.log(JSON.stringify(result))
+    console.log(result)
   }
 
   return (
@@ -28,7 +35,7 @@ export default function HomePage() {
       </div>
       <div className="movie-area">
         <div className="about-area">
-          <Title> Movie Title </Title>
+          <Title>{movie}</Title>
           <div className="description">
             <Text>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, hic incidunt! Doloremque aperiam, pariatur

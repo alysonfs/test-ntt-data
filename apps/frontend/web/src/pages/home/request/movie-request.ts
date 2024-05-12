@@ -1,8 +1,8 @@
 import { HttpClientFactory } from '@web/shared'
-import type { MovieEntity } from "@ntt-data/core"
+import { TMovie } from "@ntt-data/core"
 
 
-export const getMovie = async (title: string): Promise<MovieEntity.TMovie> => {
+export const getMovie = async (title: string): Promise<TMovie> => {
   const httpClient = HttpClientFactory()
-  return await httpClient.get<MovieEntity.TMovie>(`/movie/search-movie/${title}`)
+  return await httpClient.get<TMovie>(`/movie/search-movie/${title}`)
 }
