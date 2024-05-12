@@ -22,7 +22,7 @@ export class ResponseInterceptor implements NestInterceptor {
   responseHandler(res: any, context: ExecutionContext) {
     const ctx = context.switchToHttp()
 
-    if (typeof res !== 'object') {
+    if (res && typeof res !== 'object') {
       throw new HttpException('Response must be an object', 500)
     }
 
@@ -37,10 +37,10 @@ export class ResponseInterceptor implements NestInterceptor {
     Logger.error(`${request.method} ${request.url}`, exception.stack, 'ResponseInterceptor')
 
     const status = exception instanceof HttpException ? exception.getStatus() : HttpStatus.INTERNAL_SERVER_ERROR
-    
-    if (exception['response']){
+
+    if (exception['response']) {
       response.status(200).json(new HttpResponse(undefined, status, undefined, exception['response'].message).build())
-    }else{
+    } else {
       response.status(200).json(new HttpResponse(undefined, status, undefined, exception.message).build())
     }
   }

@@ -12,12 +12,12 @@ export class SearchMovieService {
 
   constructor(private readonly httpService: HttpService) { }
 
-  async searchMovie(title: string): Promise<Movie> {
+  async searchMovie(title: string): Promise<Movie | undefined> {
     const movies = await this.getMovies(title)
     return movies
   }
 
-  private async getMovies(title: string): Promise<Movie> {
+  private async getMovies(title: string): Promise<Movie | undefined> {
     const url = new URL(this.OMDB_API_URL)
     url.searchParams.append('apikey', this.OMDB_API_KEY)
     url.searchParams.append('t', title)
@@ -25,7 +25,7 @@ export class SearchMovieService {
     url.searchParams.append('plot', 'full')
 
     const { data } = await firstValueFrom(
-      this.httpService.get<Movie>(url.toString()).pipe(
+      this.httpService.get<any>(url.toString()).pipe(
         catchError((error: AxiosError) => {
           this.logger.error(error.response.data)
           throw 'An error happened!'
@@ -33,13 +33,17 @@ export class SearchMovieService {
       )
     )
 
-    return this.omdbDataToMovie(data)
+    if (data.imdbID) {
+      return this.omdbDataToMovie(data)
+    }
+
+    return undefined
   }
 
   private omdbDataToMovie(data: any): Movie {
     const movie = new Movie({
       title: data.Title,
-      actors: data.Actors.split(', '),
+      actors: data.Actors ? this.splitActors(data.Actors) : [],
       plot: data.Plot,
       poster: data.Poster,
       rating: parseFloat(data.imdbRating),
@@ -47,5 +51,13 @@ export class SearchMovieService {
       type: data.Type as 'movie' | 'series' | 'episode'
     })
     return movie
+  }
+
+  private splitActors(actors: string): string[] {
+    const existsComma = actors.includes(',')
+    if (existsComma) {
+      return actors.split(', ')
+    }
+    return [actors]
   }
 }
