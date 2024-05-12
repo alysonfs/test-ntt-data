@@ -7,24 +7,21 @@
     "outDir": "./dist",
     "baseUrl": "./src",
     "module": "commonjs",
-
     "declarationDir": "./dist",
     "declaration": true,
     "declarationMap": true,
-    
     "allowJs": true,
     "experimentalDecorators": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "allowSyntheticDefaultImports": true,
-    
     "incremental": true,
     "skipLibCheck": true,
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false
-    
-
   },
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
