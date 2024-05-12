@@ -1,8 +1,14 @@
 import { Icon, Text, Title } from '@ntt-data/ui/components'
 import { ButtonFavorite, ButtonReset, ButtonSearch, InputSearchMovie } from '../../components'
 import './_home-page.scss'
+import { getMovie } from './request'
 
 export default function HomePage() {
+  const onSearchHandler = async () => {
+    const result = await getMovie('batman')
+    console.log(JSON.stringify(result))
+  }
+
   return (
     <div className="container">
       <div className="top-area">
@@ -16,7 +22,7 @@ export default function HomePage() {
         </div>
         <div className="search-area">
           <InputSearchMovie />
-          <ButtonSearch />
+          <ButtonSearch onClick={onSearchHandler} />
           <ButtonReset />
         </div>
       </div>
