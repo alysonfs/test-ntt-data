@@ -1,21 +1,61 @@
 import { Text, Title } from '@ntt-data/ui/components'
 import { ButtonFavorite, ButtonReset, ButtonSearch, InputSearchMovie } from '../../components'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import './_home-page.scss'
 import { getMovie } from './request'
-import { selectMovie } from './reducers/movie.reduce'
+import { selectMovie, setMovie, initialStateMovie } from './reducers/movie.reduce'
 import { Stars } from './components'
+import { ChangeEvent, useEffect, useState } from 'react'
+import { TMovie } from '@ntt-data/core'
 
 export default function HomePage() {
   const movie = useSelector(selectMovie)
-  // const newState = selectMovie()
-  // console.log(movieSlice, selectMovie, movie)
-  console.log(movie)
+  const dispatch = useDispatch()
+
+  const [title, setTitle] = useState('')
+  const [load, setLoad] = useState(false)
+  const [message, setMessage] = useState('')
+
+  useEffect(() => {
+    if (message !== '') {
+      setTimeout(() => {
+        setMessage('')
+      }, 5000)
+      setMessage(message)
+    }
+  }, [message])
 
   const onSearchHandler = async () => {
-    const result = await getMovie('batman')
-    console.log(result)
+    if (title.length >= 3) {
+      setLoad(true)
+      const result = await getMovie(title)
+      if (result) {
+        dispatch(setMovie(result))
+      } else {
+        setMessage('We didn`t sniff out any films with that name.Try again!')
+      }
+      setLoad(false)
+    }
   }
+
+  const onResetHandler = () => {
+    dispatch(setMovie(initialStateMovie))
+  }
+
+  const onChangeHandler = (event: any) => {
+    event.preventDefault()
+    const length = event.target.value.length
+    if (length > 3) {
+      const value = event.target.value
+      setTitle(value)
+    }
+  }
+
+  const onFavoriteHandler = () => {
+    alert('Thank you for your feedback!')
+  }
+
+  const showMovie = movie.movieId !== undefined && movie.movieId !== ''
 
   return (
     <div className="container">
@@ -23,47 +63,63 @@ export default function HomePage() {
         <div className="title">
           <Title> Search Movie </Title>
           <Text>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe voluptatum molestias possimus assumenda at
-            sunt totam incidunt maxime mollitia expedita distinctio, dignissimos iure fugit in odio quo numquam deleniti
-            consequuntur?
+            Welcome to Sniffer! Use our search function and let your movie buff instincts sniff out the best films out there. Get ready to sniff out fun and excitement with every click! Let the cinematic hunt begin!"
           </Text>
         </div>
         <div className="search-area">
-          <InputSearchMovie />
+          <InputSearchMovie onChange={onChangeHandler} />
           <ButtonSearch onClick={onSearchHandler} />
-          <ButtonReset />
+          <ButtonReset onClick={onResetHandler} />
+        </div>
+        <div>
+          {load && <Text>Loading...</Text>}
+        </div>
+        <div>
+          {message && <Text>Loading...</Text>}
         </div>
       </div>
-      <div className="movie-area">
-        <div className="about-area">
-          <Title>{movie.title}</Title>
-          <div className="description">
-            <Text>
-              {movie.plot}
-            </Text>
-          </div>
-          <div className="actor">
-            <Text className="bold">Actor:</Text>
-            {movie.actors.map((actor, index) => (
-              <Text key={index.toString()}>{actor}</Text>
-            ))}
-          </div>
-          <div className="review">
-            <Text className="bold">Review</Text>
-            <div className="stars">
-              <Stars rate={movie.ratingStars || 0} />
+      {
+        showMovie && <div className="movie-area">
+          <div className="about-area">
+            <Title>{movie.title}</Title>
+            <div className="description">
+              <Text>
+                {movie.plot}
+              </Text>
+            </div>
+            <div className="actor">
+              <Text className="bold">Actor:</Text>
+              {movie.actors.map((actor, index) => (
+                <Text key={index.toString()}>{actor}</Text>
+              ))}
+            </div>
+            <div className="review">
+              <Text className="bold">Review</Text>
+              <div className="stars">
+                <Stars rate={movie.ratingStars || 2} />
+              </div>
+            </div>
+            <div className="button">
+              <ButtonFavorite onClick={onFavoriteHandler} />
             </div>
           </div>
-          <div className="button">
-            <ButtonFavorite />
-          </div>
+          {
+            (movie.poster === undefined || movie.poster === '') ?
+              <div className="poster-area">
+                <div className="image">
+                  {/* <img src="https://via.placeholder.com/200x350" alt="poster" /> */}
+                  <img src="https://placehold.co/200x350" alt="poster" />
+                </div>
+              </div>
+              :
+              <div className="poster-area">
+                <div className="image">
+                  <img src={movie.poster} alt="poster" />
+                </div>
+              </div>
+          }
         </div>
-        <div className="poster-area">
-          <div className="image">
-            <img src="https://via.placeholder.com/200x350" alt="poster" />
-          </div>
-        </div>
-      </div>
+      }
     </div>
   )
 }

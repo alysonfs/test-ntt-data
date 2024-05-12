@@ -1,1 +1,1 @@
-export * from './starts'
+export * from './stars'

@@ -9,7 +9,7 @@ export class AxiosHttpClientAdapter implements IHttpClient {
 
   get = async <T>(url: string): Promise<T> => {
     const response = await this.axiosInstance.get(url)
-    return response.data
+    return response.data.result
   }
 
 }
