@@ -9,5 +9,5 @@ export namespace UCSearchMovie {
 }
 
 export interface UCSearchMovie {
-  searchMovie: (input: UCSearchMovie.Input.SearchMovie) => Promise<Movie>
+  searchMovie: (input: UCSearchMovie.Input.SearchMovie) => Promise<Movie | undefined>
 }

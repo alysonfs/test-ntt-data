@@ -28,7 +28,7 @@ export class Movie implements IMovie {
     this.actors = movie.actors
     this.plot = movie.plot
     this.poster = movie.poster
-    this.rating = movie.rating
+    this.rating = movie.rating || 0
     this.movieId = movie.movieId
     this.type = movie.type
 
