@@ -1,19 +1,18 @@
-import { Text, Title } from '@ntt-data/ui/components'
+import { Text, Title, Loading } from '@ntt-data/ui/components'
 import { ButtonFavorite, ButtonReset, ButtonSearch, InputSearchMovie } from '../../components'
 import { useSelector, useDispatch } from 'react-redux'
 import './_home-page.scss'
 import { getMovie } from './request'
 import { selectMovie, setMovie, initialStateMovie } from './reducers/movie.reduce'
 import { Stars } from './components'
-import { ChangeEvent, useEffect, useState } from 'react'
-import { TMovie } from '@ntt-data/core'
+import { useEffect, useState } from 'react'
 
 export default function HomePage() {
   const movie = useSelector(selectMovie)
   const dispatch = useDispatch()
 
   const [title, setTitle] = useState('')
-  const [load, setLoad] = useState(false)
+  const [load, setLoad] = useState(true)
   const [message, setMessage] = useState('')
 
   useEffect(() => {
@@ -21,7 +20,6 @@ export default function HomePage() {
       setTimeout(() => {
         setMessage('')
       }, 5000)
-      setMessage(message)
     }
   }, [message])
 
@@ -29,6 +27,7 @@ export default function HomePage() {
     if (title.length >= 3) {
       setLoad(true)
       const result = await getMovie(title)
+      console.log('result', result)
       if (result) {
         dispatch(setMovie(result))
       } else {
@@ -56,6 +55,7 @@ export default function HomePage() {
   }
 
   const showMovie = movie.movieId !== undefined && movie.movieId !== ''
+  const showMessage = message && message !== ''
 
   return (
     <div className="container">
@@ -71,12 +71,8 @@ export default function HomePage() {
           <ButtonSearch onClick={onSearchHandler} />
           <ButtonReset onClick={onResetHandler} />
         </div>
-        <div>
-          {load && <Text>Loading...</Text>}
-        </div>
-        <div>
-          {message && <Text>Loading...</Text>}
-        </div>
+        {load && <Loading />}
+        {showMessage && <Text >{message}</Text>}
       </div>
       {
         showMovie && <div className="movie-area">
@@ -89,7 +85,7 @@ export default function HomePage() {
             </div>
             <div className="actor">
               <Text className="bold">Actor:</Text>
-              {movie.actors.map((actor, index) => (
+              {movie.actors.map((actor: string, index: number) => (
                 <Text key={index.toString()}>{actor}</Text>
               ))}
             </div>
@@ -107,7 +103,6 @@ export default function HomePage() {
             (movie.poster === undefined || movie.poster === '') ?
               <div className="poster-area">
                 <div className="image">
-                  {/* <img src="https://via.placeholder.com/200x350" alt="poster" /> */}
                   <img src="https://placehold.co/200x350" alt="poster" />
                 </div>
               </div>

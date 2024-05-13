@@ -44,8 +44,8 @@ export class SearchMovieService {
     const movie = new Movie({
       title: data.Title,
       actors: data.Actors ? this.splitActors(data.Actors) : [],
-      plot: data.Plot,
-      poster: data.Poster,
+      plot: data.Plot === "N/A" ? undefined : data.Plot,
+      poster: data.Poster === "N/A" ? undefined : data.Poster,
       rating: parseFloat(data.imdbRating),
       movieId: data.imdbID,
       type: data.Type as 'movie' | 'series' | 'episode'
